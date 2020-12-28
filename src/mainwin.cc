@@ -956,6 +956,7 @@ void MainWindow::updateTVal()
 */
 void MainWindow::compile(bool reload, bool forcedone, bool rebuildParameterWidget)
 {
+    LOG(message_group::None,Location::NONE,"","MainWindow::compile start %1$s, %2$s, %3$s", reload, forcedone, rebuildParameterWidget);
 	OpenSCAD::hardwarnings = Preferences::inst()->getValue("advanced/enableHardwarnings").toBool();
 	OpenSCAD::parameterCheck = Preferences::inst()->getValue("advanced/enableParameterCheck").toBool();
 	OpenSCAD::rangeCheck = Preferences::inst()->getValue("advanced/enableParameterRangeCheck").toBool();
@@ -1108,9 +1109,13 @@ void MainWindow::compileDone(bool didchange)
 	try{
 		const char *callslot;
 		if (didchange) {
+            LOG(message_group::None,Location::NONE,"","MainWindow::compileDone - inside `if (didchange)` branch");
 			updateTemporalVariables();
+            LOG(message_group::None,Location::NONE,"","Finished updateTemporalVariables()");
 			instantiateRoot();
+            LOG(message_group::None,Location::NONE,"","Finished instantiateRoot()");
 			updateCompileResult();
+            LOG(message_group::None,Location::NONE,"","Finished updateCompileResult()");
 			callslot = afterCompileSlot;
 		}
 		else {
@@ -1197,6 +1202,7 @@ void MainWindow::instantiateRoot()
 			LOG(message_group::None,Location::NONE,""," ");
 		this->processEvents();
 	}
+    LOG(message_group::None,Location::NONE,"","Finished compiling design (CSG Tree generation)...");
 }
 
 /*!
