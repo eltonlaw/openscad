@@ -425,6 +425,7 @@ list(APPEND ECHO_FILES ${FUNCTION_FILES} ${MISC_FILES} ${REDEFINITION_FILES}
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/string-unicode.scad
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/chr-tests.scad
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/ord-tests.scad
+            ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/vector-out-of-bounds.scad
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/vector-values.scad
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/search-tests.scad
             ${CMAKE_CURRENT_SOURCE_DIR}/../testdata/scad/misc/search-tests-unicode.scad
